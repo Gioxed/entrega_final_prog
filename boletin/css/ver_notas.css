@@ -1,0 +1,54 @@
+/* Estilos generales para la tabla */
+.sheet0 {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.sheet0 td, .sheet0 th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.sheet0 .column0 { width: 150px; }
+.sheet0 .column1 { width: 100px; }
+.sheet0 .column2 { width: 100px; }
+.sheet0 .column3 { width: 100px; }
+.sheet0 .column4 { width: 100px; }
+.sheet0 .column5 { width: 100px; }
+.sheet0 .column6 { width: 100px; }
+.sheet0 .column7 { width: 100px; }
+.sheet0 .column8 { width: 100px; }
+.sheet0 .column9 { width: 100px; }
+.sheet0 .column10 { width: 100px; }
+.sheet0 .column11 { width: 100px; }
+.sheet0 .column12 { width: 50px; }
+.sheet0 .column13 { width: 50px; }
+
+/* Estilos para celdas con datos */
+.style1 { background-color: #f2f2f2; }
+.style2 { background-color: #fff; }
+.style3 { background-color: #f2f2f2; }
+.style4 { background-color: #fff; }
+.style5 { background-color: #e6e6e6; }
+.style6 { background-color: #fff; }
+.style7 { background-color: #f2f2f2; }
+.style8 { background-color: #fff; }
+.style15 { background-color: #f9f9f9; }
+
+/* Estilos para inputs */
+input[type="text"] {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    border-color: #a2231d;
+    outline: none;
+}
+
+
+

@@ -1,0 +1,95 @@
+/* Establece el tamaño de las imágenes de perfil a 80px */
+.ui-w-80 {
+    width: 80px !important;
+    height: auto;
+}
+
+/* Estilo de botón predeterminado */
+.btn-default {
+    border-color: rgba(24, 28, 33, 0.1);
+    background: transparent;
+    color: #4E5155;
+}
+
+/* Estilos para los botones */
+label.btn {
+    margin-bottom: 0;
+}
+
+.btn-outline-primary {
+    border-color: #c62828 !important;
+    background: transparent;
+    color: #c62828 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #c62828 !important;
+    color: #fff !important;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+/* Color de texto claro */
+.text-light {
+    color: #babbbc !important;
+}
+
+/* Estilo de las tarjetas */
+.card {
+    background-clip: padding-box;
+    box-shadow: 0 1px 4px rgba(24, 28, 33, 0.012);
+}
+
+/* Ocultar borde en elementos row */
+.row-bordered {
+    overflow: hidden;
+}
+
+/* Ocultar input de archivos */
+.account-settings-fileinput {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+/* Estilo del enlace activo en la configuración de la cuenta */
+.account-settings-links .list-group-item.active {
+    font-weight: bold !important;
+    color: #c62828 !important;
+    background: transparent !important;
+}
+
+/* Estilos específicos para diferentes estilos visuales */
+html:not(.dark-style) .account-settings-links .list-group-item.active {
+    background: transparent !important;
+}
+
+.light-style .account-settings-links .list-group-item,
+.material-style .account-settings-links .list-group-item,
+.dark-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+/* Estilos para campos de formulario en foco */
+input:focus, textarea:focus, select:focus, .btn-primary:focus {
+    border-color: #c62828 !important;
+    box-shadow: 0 0 0 0.2rem rgba(198, 40, 40, 0.25) !important;
+}
+
+/* Estilos para el botón 'Guardar cambios' */
+.btn-primary {
+    background-color: #c62828 !important;
+    border-color: #c62828 !important;
+    color: #fff !important;
+}
+
+.btn-primary:hover {
+    background-color: #b71c1c !important;
+    border-color: #b71c1c !important;
+    color: #fff !important;
+}

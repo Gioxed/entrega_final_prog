@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletín Digital - Sistema de Carga de Notas</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/cargar_notas.css">
+</head>
+
+<body>
+
+    <!-- MENÚ -->
+    <div class="sidebar">
+        <div class="logo_details">
+            <i class="bx bxl-audible icon"></i>
+            <div class="logo_name">Mi Boletín</div>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+
+        <!-- barra buscadora -->
+        <ul class="nav-list">
+            <li>
+                <i class="bx bx-search"></i>
+                <input type="text" placeholder="Search...">
+                
+            </li>
+
+            <li>
+                <a href="index.html">
+                    <i class="bx bx-grid-alt"></i>
+                    <span class="link_name">Inicio</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="Mi_cuenta.html">
+                    <i class="bx bx-user"></i>
+                    <span class="link_name">Mi Cuenta</span>
+                </a>
+            </li>
+            <li>
+                <a href="ver_notas.html" class="active">
+                    <i class="bx bx-book-content"></i>
+                    <span class="link_name">Mis Notas</span>
+                </a>
+            </li>
+            <li>
+                <a href="calendario.html">
+                    <i class="bx bx-calendar-event"></i>
+                    <span class="link_name">Calendario</span>
+                </a>
+            </li>
+            <li>
+                <a href="Preguntas.html">
+                    <i class="bx bx-chat"></i>
+                    <span class="link_name">Preguntas frecuentes</span>
+                </a>
+            </li>
+            <li class="profile">
+                <div class="profile_details">
+                    <div class="profile_content">
+                        <div class="name">Nombre</div>
+                        <div class="designation">Random</div>
+                    </div>
+                </div>
+                <i class="bx bx-log-out" id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+
+
+    <main>
+        <section class="home-section">
+            <div class="text">
+                <img width="50px" src="../imagenes/logo.png" alt="Logo Escolar" class="logo">
+                <h1>Ver Notas</h1>
+            </div>
+
+            <table border="0" cellpadding="0" cellspacing="0" id="sheet0" class="sheet0 gridlines">
+                <col class="col0">
+                <col class="col1">
+                <col class="col2">
+                <col class="col3">
+                <col class="col4">
+                <col class="col5">
+                <col class="col6">
+                <col class="col7">
+                <col class="col8">
+                <col class="col9">
+                <col class="col10">
+                <col class="col11">
+                <col class="col12">
+                <col class="col13">
+                <tbody>
+                    <tr class="row0">
+                        <td class="column0 style1 s" colspan="1">Apellido y Nombre:</td>
+                        <td class="column1 style2 s" colspan="5" id="nombre-alumno"></td>
+                        <td class="column1 style2 s" colspan="6"></td>
+                    </tr>
+                    <tr class="row1">
+                        <td class="column0 style4 s" colspan="2">Ciclo Superior de la ESO</td>
+                        <td class="column2 style5 s">Matemática</td>
+                        <td class="column3 style5 s">Inglés técnico</td>
+                        <td class="column4 style5 s">Marco jurídico y derechos del trabajo</td>
+                        <td class="column5 style5 s">TÉCNICA: Asistencia 2</td>
+                        <td class="column6 style5 s">TÉCNICA: Autogestión</td>
+                        <td class="column7 style5 s">TÉCNICA: Hardware 4</td>
+                        <td class="column8 style5 s">TÉCNICA: Prácticas Profesionalizantes 2</td>
+                        <td class="column9 style5 s">TÉCNICA: Programación</td>
+                        <td class="column10 style5 s">TÉCNICA: Redes 3</td>
+                        <td class="column11 style5 s">EDI: Arduino 3</td>
+                    </tr>
+                    <tr class="row2">
+                        <td class="column0 style6 s" rowspan="3">1° Cuatrimestre</td>
+                        <td class="column1 style7 s">1° Informe</td>
+                        <td class="column2 style8" id="matematica_1_1"></td>
+                        <td class="column3 style8" id="ingles_1_1"></td>
+                        <td class="column4 style8" id="juridico_1_1"></td>
+                        <td class="column5 style8" id="asistencia_1_1"></td>
+                        <td class="column6 style8" id="autogestion_1_1"></td>
+                        <td class="column7 style8" id="hardware_1_1"></td>
+                        <td class="column8 style8" id="practicas_1_1"></td>
+                        <td class="column9 style8" id="programacion_1_1"></td>
+                        <td class="column10 style8" id="redes_1_1"></td>
+                        <td class="column11 style8" id="arduino_1_1"></td>
+                    </tr>
+                    <tr class="row3">
+                        <td class="column1 style7 s">2° Informe</td>
+                        <td class="column2 style8" id="matematica_1_2"></td>
+                        <td class="column3 style8" id="ingles_1_2"></td>
+                        <td class="column4 style8" id="juridico_1_2"></td>
+                        <td class="column5 style8" id="asistencia_1_2"></td>
+                        <td class="column6 style8" id="autogestion_1_2"></td>
+                        <td class="column7 style8" id="hardware_1_2"></td>
+                        <td class="column8 style8" id="practicas_1_2"></td>
+                        <td class="column9 style8" id="programacion_1_2"></td>
+                        <td class="column10 style8" id="redes_1_2"></td>
+                        <td class="column11 style8" id="arduino_1_2"></td>
+                    </tr>
+                    <tr class="row4">
+                        <td class="column1 style7 s">NOTA</td>
+                        <td class="column2 style8" id="matematica_1_final"></td>
+                        <td class="column3 style8" id="ingles_1_final"></td>
+                        <td class="column4 style8" id="juridico_1_final"></td>
+                        <td class="column5 style8" id="asistencia_1_final"></td>
+                        <td class="column6 style8" id="autogestion_1_final"></td>
+                        <td class="column7 style8" id="hardware_1_final"></td>
+                        <td class="column8 style8" id="practicas_1_final"></td>
+                        <td class="column9 style8" id="programacion_1_final"></td>
+                        <td class="column10 style8" id="redes_1_final"></td>
+                        <td class="column11 style8" id="arduino_1_final"></td>
+                    </tr>
+                    
+                    <tr class="row5">
+                        <td class="column0 style6 s" rowspan="3">2° Cuatrimestre</td>
+                        <td class="column1 style7 s">1° Informe</td>
+                        <td class="column2 style8" id="matematica_2_1"></td>
+                        <td class="column3 style8" id="ingles_2_1"></td>
+                        <td class="column4 style8" id="juridico_2_1"></td>
+                        <td class="column5 style8" id="asistencia_2_1"></td>
+                        <td class="column6 style8" id="autogestion_2_1"></td>
+                        <td class="column7 style8" id="hardware_2_1"></td>
+                        <td class="column8 style8" id="practicas_2_1"></td>
+                        <td class="column9 style8" id="programacion_2_1"></td>
+                        <td class="column10 style8" id="redes_2_1"></td>
+                        <td class="column11 style8" id="arduino_2_1"></td>
+                    </tr>
+                    <tr class="row6">
+                        <td class="column1 style7 s">2° Informe</td>
+                        <td class="column2 style8" id="matematica_2_2"></td>
+                        <td class="column3 style8" id="ingles_2_2"></td>
+                        <td class="column4 style8" id="juridico_2_2"></td>
+                        <td class="column5 style8" id="asistencia_2_2"></td>
+                        <td class="column6 style8" id="autogestion_2_2"></td>
+                        <td class="column7 style8" id="hardware_2_2"></td>
+                        <td class="column8 style8" id="practicas_2_2"></td>
+                        <td class="column9 style8" id="programacion_2_2"></td>
+                        <td class="column10 style8" id="redes_2_2"></td>
+                        <td class="column11 style8" id="arduino_2_2"></td>
+                    </tr>
+                    <tr class="row7">
+                        <td class="column1 style7 s">NOTA</td>
+                        <td class="column2 style8" id="matematica_2_final"></td>
+                        <td class="column3 style8" id="ingles_2_final"></td>
+                        <td class="column4 style8" id="juridico_2_final"></td>
+                        <td class="column5 style8" id="asistencia_2_final"></td>
+                        <td class="column6 style8" id="autogestion_2_final"></td>
+                        <td class="column7 style8" id="hardware_2_final"></td>
+                        <td class="column8 style8" id="practicas_2_final"></td>
+                        <td class="column9 style8" id="programacion_2_final"></td>
+                        <td class="column10 style8" id="redes_2_final"></td>
+                        <td class="column11 style8" id="arduino_2_final"></td>
+                    </tr>
+                    
+                    <tr class="row8">
+                        <td class="column0 style7 s" colspan="2">Nota Anual</td>
+                        <td class="column2 style8" id="matematica_anual"></td>
+                        <td class="column3 style8" id="ingles_anual"></td>
+                        <td class="column4 style8" id="juridico_anual"></td>
+                        <td class="column5 style8" id="asistencia_anual"></td>
+                        <td class="column6 style8" id="autogestion_anual"></td>
+                        <td class="column7 style8" id="hardware_anual"></td>
+                        <td class="column8 style8" id="practicas_anual"></td>
+                        <td class="column9 style8" id="programacion_anual"></td>
+                        <td class="column10 style8" id="redes_anual"></td>
+                        <td class="column11 style8" id="arduino_anual"></td>
+                    </tr>
+                    <tr class="row9">
+                        <td class="column0 style7 s" colspan="2">Rec Dic</td>
+                        <td class="column2 style8" id="matematica_rec_dic"></td>
+                        <td class="column3 style8" id="ingles_rec_dic"></td>
+                        <td class="column4 style8" id="juridico_rec_dic"></td>
+                        <td class="column5 style8" id="asistencia_rec_dic"></td>
+                        <td class="column6 style8" id="autogestion_rec_dic"></td>
+                        <td class="column7 style8" id="hardware_rec_dic"></td>
+                        <td class="column8 style8" id="practicas_rec_dic"></td>
+                        <td class="column9 style8" id="programacion_rec_dic"></td>
+                        <td class="column10 style8" id="redes_rec_dic"></td>
+                        <td class="column11 style8" id="arduino_rec_dic"></td>
+                    </tr>
+                    <tr class="row10">
+                        <td class="column0 style7 s" colspan="2">Rec Feb</td>
+                        <td class="column2 style8" id="matematica_rec_feb"></td>
+                        <td class="column3 style8" id="ingles_rec_feb"></td>
+                        <td class="column4 style8" id="juridico_rec_feb"></td>
+                        <td class="column5 style8" id="asistencia_rec_feb"></td>
+                        <td class="column6 style8" id="autogestion_rec_feb"></td>
+                        <td class="column7 style8" id="hardware_rec_feb"></td>
+                        <td class="column8 style8" id="practicas_rec_feb"></td>
+                        <td class="column9 style8" id="programacion_rec_feb"></td>
+                        <td class="column10 style8" id="redes_rec_feb"></td>
+                        <td class="column11 style8" id="arduino_rec_feb"></td>
+                    </tr>
+                    <tr class="row11">
+                        <td class="column0 style7 s" colspan="2">Nota Final</td>
+                        <td class="column2 style8" id="matematica_final"></td>
+                        <td class="column3 style8" id="ingles_final"></td>
+                        <td class="column4 style8" id="juridico_final"></td>
+                        <td class="column5 style8" id="asistencia_final"></td>
+                        <td class="column6 style8" id="autogestion_final"></td>
+                        <td class="column7 style8" id="hardware_final"></td>
+                        <td class="column8 style8" id="practicas_final"></td>
+                        <td class="column9 style8" id="programacion_final"></td>
+                        <td class="column10 style8" id="redes_final"></td>
+                        <td class="column11 style8" id="arduino_final"></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </section>
+
+    </main>
+
+
+    <!--::::Pie de Pagina::::::-->
+<footer class="pie-pagina">
+    <div class="grupo-1">
+        <div class="box">
+            <figure>
+                <a href="#">
+                    <img src="../imagenes/logo_empresa.png" alt="Logo UniTeq">
+                </a>
+            </figure>
+        </div>
+        <div class="box">
+            <h2>SOBRE NOSOTROS</h2>
+            <p>
+                En UniTeq Innovate, brindamos servicios informáticos especializados, facilitando la digitalización y gestión eficiente en instituciones educativas.</p>
+        </div>
+        <div class="box">
+            <h2>SIGUENOS</h2>
+            <div class="red-social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-github"></a>
+            </div>
+        </div>
+    </div>
+    <div class="grupo-2">
+        <small>&copy; 2024 <b>UniTeq Innovate</b> - Todos los Derechos Reservados.</small>
+    </div>
+</footer>
+
+<script>
+    const dni = localStorage.getItem('dni');  // DNI del alumno 
+
+// Llamada para obtener el nombre y las notas del alumno por DNI
+fetch(`/api/notas/${dni}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error en la respuesta de la API');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Asegúrate de que `data` es un array y contiene los datos esperados
+        if (data.length > 0) {
+            const alumnoData = data[0];  // Primer resultado, en caso de múltiples registros
+
+            // Mostrar el nombre completo del alumno
+            document.getElementById('nombre-alumno').innerText = `${alumnoData.nombre_alumno} ${alumnoData.apellido_alumno}`;
+    
+    // Ejemplo para asignar las notas del 1er cuatrimestre
+    document.getElementById('matematica_1_1').innerText = alumnoData.matematica_1_1;
+    document.getElementById('ingles_1_1').innerText = alumnoData.ingles_1_1;
+    document.getElementById('juridico_1_1').innerText = alumnoData.juridico_1_1;
+    document.getElementById('asistencia_1_1').innerText = alumnoData.asistencia_1_1;
+    document.getElementById('autogestion_1_1').innerText = alumnoData.autogestion_1_1;
+    document.getElementById('hardware_1_1').innerText = alumnoData.hardware_1_1;
+    document.getElementById('practicas_1_1').innerText = alumnoData.practicas_1_1;
+    document.getElementById('programacion_1_1').innerText = alumnoData.programacion_1_1;
+    document.getElementById('redes_1_1').innerText = alumnoData.redes_1_1;
+    document.getElementById('arduino_1_1').innerText = alumnoData.arduino_1_1;
+
+//2do informe
+    document.getElementById('matematica_1_2').innerText = alumnoData.matematica_1_2;
+    document.getElementById('ingles_1_2').innerText = alumnoData.ingles_1_2;
+    document.getElementById('juridico_1_2').innerText = alumnoData.juridico_1_2;
+    document.getElementById('asistencia_1_2').innerText = alumnoData.asistencia_1_2;
+    document.getElementById('autogestion_1_2').innerText = alumnoData.autogestion_1_2;
+    document.getElementById('hardware_1_2').innerText = alumnoData.hardware_1_2;
+    document.getElementById('practicas_1_2').innerText = alumnoData.practicas_1_2;
+    document.getElementById('programacion_1_2').innerText = alumnoData.programacion_1_2;
+    document.getElementById('redes_1_2').innerText = alumnoData.redes_1_2;
+    document.getElementById('arduino_1_2').innerText = alumnoData.arduino_1_2;
+
+    // Nota
+document.getElementById('matematica_1_final').innerText = alumnoData.matematica_1_final;
+document.getElementById('ingles_1_final').innerText = alumnoData.ingles_1_final;
+document.getElementById('juridico_1_final').innerText = alumnoData.juridico_1_final;
+document.getElementById('asistencia_1_final').innerText = alumnoData.asistencia_1_final;
+document.getElementById('autogestion_1_final').innerText = alumnoData.autogestion_1_final;
+document.getElementById('hardware_1_final').innerText = alumnoData.hardware_1_final;
+document.getElementById('practicas_1_final').innerText = alumnoData.practicas_1_final;
+document.getElementById('programacion_1_final').innerText = alumnoData.programacion_1_final;
+document.getElementById('redes_1_final').innerText = alumnoData.redes_1_final;
+document.getElementById('arduino_1_final').innerText = alumnoData.arduino_1_final;
+
+// Segundo cuatrimestre
+// Primer informe
+document.getElementById('matematica_2_1').innerText = alumnoData.matematica_2_1;
+document.getElementById('ingles_2_1').innerText = alumnoData.ingles_2_1;
+document.getElementById('juridico_2_1').innerText = alumnoData.juridico_2_1;
+document.getElementById('asistencia_2_1').innerText = alumnoData.asistencia_2_1;
+document.getElementById('autogestion_2_1').innerText = alumnoData.autogestion_2_1;
+document.getElementById('hardware_2_1').innerText = alumnoData.hardware_2_1;
+document.getElementById('practicas_2_1').innerText = alumnoData.practicas_2_1;
+document.getElementById('programacion_2_1').innerText = alumnoData.programacion_2_1;
+document.getElementById('redes_2_1').innerText = alumnoData.redes_2_1;
+document.getElementById('arduino_2_1').innerText = alumnoData.arduino_2_1;
+
+// Segundo informe
+document.getElementById('matematica_2_2').innerText = alumnoData.matematica_2_2;
+document.getElementById('ingles_2_2').innerText = alumnoData.ingles_2_2;
+document.getElementById('juridico_2_2').innerText = alumnoData.juridico_2_2;
+document.getElementById('asistencia_2_2').innerText = alumnoData.asistencia_2_2;
+document.getElementById('autogestion_2_2').innerText = alumnoData.autogestion_2_2;
+document.getElementById('hardware_2_2').innerText = alumnoData.hardware_2_2;
+document.getElementById('practicas_2_2').innerText = alumnoData.practicas_2_2;
+document.getElementById('programacion_2_2').innerText = alumnoData.programacion_2_2;
+document.getElementById('redes_2_2').innerText = alumnoData.redes_2_2;
+document.getElementById('arduino_2_2').innerText = alumnoData.arduino_2_2;
+
+// Nota
+document.getElementById('matematica_2_final').innerText = alumnoData.matematica_2_final;
+document.getElementById('ingles_2_final').innerText = alumnoData.ingles_2_final;
+document.getElementById('juridico_2_final').innerText = alumnoData.juridico_2_final;
+document.getElementById('asistencia_2_final').innerText = alumnoData.asistencia_2_final;
+document.getElementById('autogestion_2_final').innerText = alumnoData.autogestion_2_final;
+document.getElementById('hardware_2_final').innerText = alumnoData.hardware_2_final;
+document.getElementById('practicas_2_final').innerText = alumnoData.practicas_2_final;
+document.getElementById('programacion_2_final').innerText = alumnoData.programacion_2_final;
+document.getElementById('redes_2_final').innerText = alumnoData.redes_2_final;
+document.getElementById('arduino_2_final').innerText = alumnoData.arduino_2_final;
+
+// Nota anual
+document.getElementById('matematica_anual').innerText = alumnoData.matematica_anual;
+document.getElementById('ingles_anual').innerText = alumnoData.ingles_anual;
+document.getElementById('juridico_anual').innerText = alumnoData.juridico_anual;
+document.getElementById('asistencia_anual').innerText = alumnoData.asistencia_anual;
+document.getElementById('autogestion_anual').innerText = alumnoData.autogestion_anual;
+document.getElementById('hardware_anual').innerText = alumnoData.hardware_anual;
+document.getElementById('practicas_anual').innerText = alumnoData.practicas_anual;
+document.getElementById('programacion_anual').innerText = alumnoData.programacion_anual;
+document.getElementById('redes_anual').innerText = alumnoData.redes_anual;
+document.getElementById('arduino_anual').innerText = alumnoData.arduino_anual;
+
+// Rec Dic
+document.getElementById('matematica_rec_dic').innerText = alumnoData.matematica_rec_dic;
+document.getElementById('ingles_rec_dic').innerText = alumnoData.ingles_rec_dic;
+document.getElementById('juridico_rec_dic').innerText = alumnoData.juridico_rec_dic;
+document.getElementById('asistencia_rec_dic').innerText = alumnoData.asistencia_rec_dic;
+document.getElementById('autogestion_rec_dic').innerText = alumnoData.autogestion_rec_dic;
+document.getElementById('hardware_rec_dic').innerText = alumnoData.hardware_rec_dic;
+document.getElementById('practicas_rec_dic').innerText = alumnoData.practicas_rec_dic;
+document.getElementById('programacion_rec_dic').innerText = alumnoData.programacion_rec_dic;
+document.getElementById('redes_rec_dic').innerText = alumnoData.redes_rec_dic;
+document.getElementById('arduino_rec_dic').innerText = alumnoData.arduino_rec_dic;
+
+// Rec Feb
+document.getElementById('matematica_rec_feb').innerText = alumnoData.matematica_rec_feb;
+document.getElementById('ingles_rec_feb').innerText = alumnoData.ingles_rec_feb;
+document.getElementById('juridico_rec_feb').innerText = alumnoData.juridico_rec_feb;
+document.getElementById('asistencia_rec_feb').innerText = alumnoData.asistencia_rec_feb;
+document.getElementById('autogestion_rec_feb').innerText = alumnoData.autogestion_rec_feb;
+document.getElementById('hardware_rec_feb').innerText = alumnoData.hardware_rec_feb;
+document.getElementById('practicas_rec_feb').innerText = alumnoData.practicas_rec_feb;
+document.getElementById('programacion_rec_feb').innerText = alumnoData.programacion_rec_feb;
+document.getElementById('redes_rec_feb').innerText = alumnoData.redes_rec_feb;
+document.getElementById('arduino_rec_feb').innerText = alumnoData.arduino_rec_feb;
+
+// Nota Final
+document.getElementById('matematica_final').innerText = alumnoData.matematica_final;
+document.getElementById('ingles_final').innerText = alumnoData.ingles_final;
+document.getElementById('juridico_final').innerText = alumnoData.juridico_final;
+document.getElementById('asistencia_final').innerText = alumnoData.asistencia_final;
+document.getElementById('autogestion_final').innerText = alumnoData.autogestion_final;
+document.getElementById('hardware_final').innerText = alumnoData.hardware_final;
+document.getElementById('practicas_final').innerText = alumnoData.practicas_final;
+document.getElementById('programacion_final').innerText = alumnoData.programacion_final;
+document.getElementById('redes_final').innerText = alumnoData.redes_final;
+document.getElementById('arduino_final').innerText = alumnoData.arduino_final;
+
+    
+} else {
+            console.error('No se encontraron notas para este alumno');
+        }
+    })
+    .catch(error => {
+        console.error('Error al obtener las notas:', error);
+    });
+
+</script>
+
+
+    <script src="../js/index.js"></script>
+</body>
+</html>

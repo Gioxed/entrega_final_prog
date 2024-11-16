@@ -1,0 +1,122 @@
+/* Estilos para las pestañas */
+        
+.tablink.active {
+    
+    font-weight: bold;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+.table-container {
+    margin-bottom: 30px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f4f4f4;
+}
+
+/* Estilos generales para la tabla */
+.sheet0 {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.sheet0 td, .sheet0 th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+
+
+/* Estilos para celdas con datos */
+.style1 { background-color: #f2f2f2; }
+.style2 { background-color: #fff; }
+.style3 { background-color: #f2f2f2; }
+.style4 { background-color: #fff; }
+.style5 { background-color: #e6e6e6; }
+.style6 { background-color: #fff; }
+.style7 { background-color: #f2f2f2; }
+.style8 { background-color: #fff; }
+.style15 { background-color: #f9f9f9; }
+
+/* Estilos para inputs */
+input[type="text"] {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    border-color: #a2231d;
+    outline: none;
+}
+
+
+.tabs {
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.tablink {
+    background-color: #ddd;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tablink:hover {
+    background-color: #bbb;
+}
+
+.tablink.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/* Botón más grande y centrado */
+.save-button {
+    background-color: #a2231d; /* Color de fondo basado en tu marca */
+    color: white;
+    padding: 15px 30px; /* Aumentado tamaño del botón */
+    font-size: 20px; /* Texto más grande */
+    border: none;
+    border-radius: 10px; /* Bordes más redondeados */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto; /* Centrado automático y margen superior */
+    text-align: center;
+}
+
+.save-button:hover {
+    background-color: #a2231d;
+}
+
+.save-button:active {
+    background-color: #a2231d;
+    box-shadow: 0 5px #666;
+    transform: translateY(2px);
+}
+
+

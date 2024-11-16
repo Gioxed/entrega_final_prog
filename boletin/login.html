@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Inicio</title>
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+    <div class="main-container">
+        <!-- Contenedor para el formulario de inicio/registro -->
+        <div class="container" id="container">
+            <div class="form-container sign-up">
+                <form id="register-form" action="/auth/register" method="POST">
+                    <h1>Crear Cuenta</h1>
+                    <input type="text" name="name" placeholder="Nombre" required>
+                    <input type="text" name="lastname" placeholder="Apellido" required>
+                    <input type="text" name="dni" placeholder="DNI" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                    <select name="role" required>
+                        <option value="alumno">Alumno/Padre</option>
+                        <option value="encargado">Encargado de Cargar Notas</option>
+                    </select>
+                    <button type="submit">Registrar</button>
+                </form>
+                <div id="register-message" style="display: none; color: red;"></div>
+            </div>
+            
+            <div class="form-container sign-in">
+                <form id="login-form" action="/auth/login" method="POST">
+                    <h1>Iniciar Sesión</h1>
+                    <input type="text" name="dni" placeholder="DNI" required> <!-- Cambié a 'text' para DNI -->
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>¡Hola!</h1>
+                        <p>Regístrate con tus datos personales para ingresar a tu boletín digital</p>
+                        <button class="hidden" id="login">Iniciar Sesión</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>¡Bienvenido de Nuevo!</h1>
+                        <p>Ingresa tus datos personales para ingresar a tu boletín digital</p>
+                        <button class="hidden" id="register">Registrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor para la información de la escuela alineada a la izquierda -->
+        <div class="info-escuela">
+            <h1>Colegio Dr. Ernesto Guevara</h1>
+            <p><strong>Teléfono:</strong> <a href="tel:2964300532">2964 300532</a></p>
+            <p><strong>Correo Electrónico:</strong> <a href="mailto:cpdeguevara.sec@tdf.edu.ar">cpdeguevara.sec@tdf.edu.ar</a></p>
+            <p><strong>Nivel Educativo:</strong> Secundaria.</p>
+            <p><strong>Ubicación:</strong></p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4487.182223227556!2d-67.75192344337522!3d-53.79928159804732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbc4b166400858a59%3A0xc2dc84ca26547d6a!2sColegio%20Provincial%20Dr.%20Ernesto%20Guevara!5e0!3m2!1ses-419!2sar!4v1728672614683!5m2!1ses-419!2sar" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('login-form').addEventListener('submit', async function(event) {
+                event.preventDefault(); // Evita el envío del formulario estándar
+            
+                const dni = event.target.dni.value;
+                const password = event.target.password.value;
+            
+                try {
+                    const response = await fetch('/auth/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ dni, password })
+                    });
+                    
+                    const result = await response.json();
+            
+                    if (result.success) {
+                        // Guardar el DNI en el localStorage
+                        localStorage.setItem('dni', dni);  // Guardamos el DNI del usuario
+        
+                        // Redirige si la autenticación es exitosa
+                        window.location.href = result.redirectUrl;
+                    } else {
+                        // Muestra el mensaje de error
+                        const messageElement = document.getElementById('login-message');
+                        messageElement.style.display = 'block';
+                        messageElement.textContent = result.message;
+                    }
+                } catch (error) {
+                    console.error("Error al intentar iniciar sesión:", error);
+                }
+            });
+        </script>
+        
+
+<script>
+    // Añade un evento al formulario de registro para manejar el envío
+    document.getElementById('register-form').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Evita el envío del formulario estándar
+
+        // Obtén los valores de los campos de entrada
+        const name = event.target.name.value;
+        const lastname = event.target.lastname.value;
+        const dni = event.target.dni.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        const role = event.target.role.value;
+
+        try {
+            // Envía los datos de registro al backend
+            const response = await fetch('/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, lastname, dni, email, password, role })
+            });
+            
+            const result = await response.json(); // Convierte la respuesta a JSON
+
+            if (result.success) {
+                // Redirige o muestra un mensaje de éxito
+                alert("Registro exitoso. Ahora puedes iniciar sesión.");
+                 // Redirige al formulario de inicio de sesión (ajusta la ruta si es necesario)
+            } else {
+                // Muestra el mensaje de error si algo falló
+                const messageElement = document.getElementById('register-message');
+                messageElement.style.display = 'block';
+                messageElement.textContent = result.message; // Muestra el mensaje de error en el elemento correspondiente
+            }
+        } catch (error) {
+            console.error("Error al intentar registrar:", error); // Muestra el error en la consola
+        }
+    });
+</script>
+
+
+        
+    <script src="js/script.js"></script>
+    <script src="js/login.js"></script>
+    <script src="Backend/log.js"></script>
+    <script src="Backend/auth.js"></script>
+</body>
+
+</html>
+
